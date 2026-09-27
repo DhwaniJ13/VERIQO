@@ -2,46 +2,58 @@
 
 ### Extract less. Verify more.
 
-VERIQO is an AI-powered document trust and verification system for business documents such as invoices.
+**VERIQO** is an AI-powered document verification system that goes beyond simple information extraction.
 
-Instead of only extracting information from a document, VERIQO checks whether the extracted information can be trusted before it enters a business workflow.
+It extracts structured information from real-world business documents, validates the extracted values against independent business rules, combines reliability signals, and identifies information that requires human attention.
 
-## What VERIQO Does
+> **AI can extract it. VERIQO checks whether you can trust it.**
 
-- Extracts structured information from invoices
-- Supports image and text-based documents
-- Uses Gemini for structured document extraction
-- Uses Tesseract for OCR and OCR confidence
-- Validates extracted financial values
-- Calculates a verification score
-- Shows field-level reliability
-- Flags documents that need human review
+<p align="center">
+  <img src="assets/VERIQO_dashboard.png" alt="VERIQO Document Verification Dashboard" width="100%">
+</p>
 
-## How It Works
+<p align="center">
+  <em>VERIQO — AI-powered document verification dashboard</em>
+</p>
+
+---
+
+## 🚀 The Problem
+
+Traditional document AI focuses mainly on:
+
+**Document → Extracted Data**
+
+But extraction alone does not guarantee that the extracted information is correct.
+
+Real-world documents can contain:
+
+- Poor-quality scans
+- OCR errors
+- Incorrect calculations
+- Missing information
+- Inconsistent values
+- Ambiguous fields
+
+If incorrect information enters a downstream business workflow, the problem is no longer just an extraction error — it becomes a **data trust problem**.
+
+---
+
+## 💡 Our Solution
+
+VERIQO adds a **verification layer after extraction**.
+
+Instead of blindly accepting extracted information, VERIQO follows:
 
 ```text
-Document
-    |
-    v
 Upload
-    |
-    +----------------------+
-    |                      |
-    v                      v
-OCR / Text             Gemini Vision
-Extraction             for images
-    |                      |
-    +----------+-----------+
-               |
-               v
-        Structured Invoice
-               |
-               v
-          Validation
-               |
-               v
-         Trust Engine
-               |
-          +----+----+
-          |         |
-         SAFE     REVIEW
+   ↓
+Extract
+   ↓
+Structure
+   ↓
+Validate
+   ↓
+Verify
+   ↓
+SAFE / REVIEW
